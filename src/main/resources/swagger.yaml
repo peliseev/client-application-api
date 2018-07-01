@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  version: "0.1.0"
+  title: "Contact applications"
+  description: "Сервис для получения заявок клиента"
+host: "localhost:8080"
+basePath: /api
+schemes:
+- http
+- https
+paths:
+  "/contact/{contactId}/application":
+    get:
+      description: Метод для получения последней (самой новой) заявки клиента
+      produces:
+        - application/json
+        - application/xml
+      parameters:
+      - in: path
+        name: contactId
+        type: string
+        required: true
+        description: Идентификатор клиента
+      - in: query
+        name: responseType
+        type: string
+        enum: [json, xml]
+        default: json
+        description: MIME-тип ответа (xml или json). По умолчанию json
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              success:
+               type: boolean
+              result:
+                $ref: "#/definitions/ContactApplication"
+        default:
+          description: Error
+          schema:
+            type: object
+            properties:
+              success:
+               type: boolean
+              error:
+                $ref: "#/definitions/Error"
+definitions:
+  ContactApplication:
+    type: object
+    properties:
+      contactId:
+        type: string
+      application:
+        $ref: "#/definitions/Application"
+  Application:
+    type: object
+    properties:
+      applicationId:
+        type: string
+      productName:
+        type: string
+      created:
+        type: string
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+      descriotion:
+        type: string
