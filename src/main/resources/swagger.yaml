@@ -14,19 +14,12 @@ paths:
       description: Метод для получения последней (самой новой) заявки клиента
       produces:
         - application/json
-        - application/xml
       parameters:
       - in: path
         name: contactId
         type: string
         required: true
         description: Идентификатор клиента
-      - in: query
-        name: responseType
-        type: string
-        enum: [json, xml]
-        default: json
-        description: MIME-тип ответа (xml или json). По умолчанию json
       responses:
         200:
           description: Success

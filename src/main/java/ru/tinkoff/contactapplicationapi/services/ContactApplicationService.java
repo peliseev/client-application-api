@@ -16,10 +16,15 @@ import java.util.Optional;
 
 @Service
 public class ContactApplicationService {
-    @Autowired
+
     private ApplicationsDao applicationsDao;
-    @Autowired
     private ContactDao contactDao;
+
+    @Autowired
+    ContactApplicationService(ApplicationsDao applicationsDao, ContactDao contactDao) {
+        this.applicationsDao = applicationsDao;
+        this.contactDao = contactDao;
+    }
 
     public Response process(long contactId) {
         Optional<Contact> optionalContacts = contactDao.findById(contactId);
@@ -36,6 +41,11 @@ public class ContactApplicationService {
         List<Applications> applications = optionalApplications.get();
 
         Optional<Applications> optionalApplication = applications.stream().max(Comparator.comparing(Applications::getDtCreated));
+
+        if (!optionalApplication.isPresent()) {
+            throw new ApplicationsNotFoundException();
+        }
+
         Applications application = optionalApplication.get();
 
         return new SuccessResponse(true,

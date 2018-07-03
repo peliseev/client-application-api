@@ -26,7 +26,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     }
     @ExceptionHandler({IllegalArgumentException.class, MethodArgumentTypeMismatchException.class})
     protected ResponseEntity<Response> handleIllegalArgumentException() {
-        return new ResponseEntity<>(new ErrorResponse(false,new Error(400, "Wrong Arguments")), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ErrorResponse(false,new Error(400,"Wrong Arguments")), HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler({JDBCException.class, SQLGrammarException.class, JDBCConnectionException.class})
     protected ResponseEntity<Response> handleSQLException() {

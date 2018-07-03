@@ -12,6 +12,9 @@ public class Application {
     @JsonProperty("created")
     private String created;
 
+    public Application() {
+    }
+
     public Application(long applicationId, String productName, String created) {
         this.applicationId = applicationId;
         this.productName = productName;

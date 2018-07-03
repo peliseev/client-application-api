@@ -14,12 +14,10 @@ import ru.tinkoff.contactapplicationapi.services.ContactApplicationService;
 public class ContactApplicationController {
 
     @Autowired
-    ContactApplicationService contactApplicationService;
+    private ContactApplicationService contactApplicationService;
 
     @GetMapping("/contact/{contactId}/application")
-    public ResponseEntity<Response> getContactApplication (@PathVariable("contactId") long contactId,
-                                                            @RequestParam(value = "responseType", required = false,
-                                                                    defaultValue = "json") String responseType) {
+    public ResponseEntity<Response> getContactApplication (@PathVariable("contactId") long contactId) {
         Response response = contactApplicationService.process(contactId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

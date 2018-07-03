@@ -29,4 +29,7 @@ public class ContactApplication {
         this.contactId = contactId;
         this.application = application;
     }
+
+    public ContactApplication() {
+    }
 }

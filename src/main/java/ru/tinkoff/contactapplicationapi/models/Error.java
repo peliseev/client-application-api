@@ -6,12 +6,15 @@ public class Error {
     @JsonProperty("code")
     private int code;
 
-    @JsonProperty("descriotion")
-    private String descriotion;
+    @JsonProperty("description")
+    private String description;
 
-    public Error(int code, String descriotion) {
+    public Error() {
+    }
+
+    public Error(int code, String description) {
         this.code = code;
-        this.descriotion = descriotion;
+        this.description = description;
     }
 
     public int getCode() {
@@ -22,11 +25,11 @@ public class Error {
         this.code = code;
     }
 
-    public String getDescriotion() {
-        return descriotion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriotion(String description) {
-        this.descriotion = description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
