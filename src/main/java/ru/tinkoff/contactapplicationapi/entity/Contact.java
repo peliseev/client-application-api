@@ -1,8 +1,6 @@
 package ru.tinkoff.contactapplicationapi.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -17,10 +15,6 @@ public class Contact {
     private Set<Applications> applications;
 
     public Contact() {
-    }
-
-    public Contact(Set<Applications> applications) {
-        this.applications = applications;
     }
 
     public long getId() {

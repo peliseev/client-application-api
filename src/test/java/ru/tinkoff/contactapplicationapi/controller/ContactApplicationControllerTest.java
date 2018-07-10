@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.controllers;
+package ru.tinkoff.contactapplicationapi.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hibernate.exception.JDBCConnectionException;
@@ -15,10 +15,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.context.WebApplicationContext;
-import ru.tinkoff.contactapplicationapi.exceptions.ApplicationsNotFoundException;
-import ru.tinkoff.contactapplicationapi.exceptions.ContactNotFoundException;
-import ru.tinkoff.contactapplicationapi.models.*;
-import ru.tinkoff.contactapplicationapi.services.ContactApplicationService;
+import ru.tinkoff.contactapplicationapi.exception.ApplicationsNotFoundException;
+import ru.tinkoff.contactapplicationapi.exception.ContactNotFoundException;
+import ru.tinkoff.contactapplicationapi.model.*;
+import ru.tinkoff.contactapplicationapi.service.ContactApplicationService;
 
 import java.sql.SQLException;
 

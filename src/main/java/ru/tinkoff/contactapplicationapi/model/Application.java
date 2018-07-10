@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.models;
+package ru.tinkoff.contactapplicationapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,9 +11,6 @@ public class Application {
 
     @JsonProperty("created")
     private String created;
-
-    public Application() {
-    }
 
     public Application(long applicationId, String productName, String created) {
         this.applicationId = applicationId;

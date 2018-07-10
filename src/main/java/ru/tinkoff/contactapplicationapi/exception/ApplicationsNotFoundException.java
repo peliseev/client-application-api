@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.exceptions;
+package ru.tinkoff.contactapplicationapi.exception;
 
 public class ApplicationsNotFoundException extends RuntimeException {
 }

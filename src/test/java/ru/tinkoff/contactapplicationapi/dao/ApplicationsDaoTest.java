@@ -23,13 +23,13 @@ public class ApplicationsDaoTest {
     private ApplicationsDao applicationsDao;
 
     @Test
-    public void whenFindById_thenReturnContact() throws Exception {
+    public void whenFindById_thenReturnContact() {
         Applications application = new Applications();
         Object applicationId = testEntityManager.persistAndGetId(application);
         testEntityManager.flush();
 
-        Optional<Applications> found = applicationsDao.findById((long)applicationId);
-        assertThat(found.get().getId()).isEqualTo((long)applicationId);
+        Optional<Applications> found = applicationsDao.findById((long) applicationId);
+        assertThat(found.get().getId()).isEqualTo((long) applicationId);
     }
 
 }

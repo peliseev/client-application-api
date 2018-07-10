@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.services;
+package ru.tinkoff.contactapplicationapi.service;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,14 +12,15 @@ import ru.tinkoff.contactapplicationapi.dao.ApplicationsDao;
 import ru.tinkoff.contactapplicationapi.dao.ContactDao;
 import ru.tinkoff.contactapplicationapi.entity.Applications;
 import ru.tinkoff.contactapplicationapi.entity.Contact;
-import ru.tinkoff.contactapplicationapi.exceptions.ApplicationsNotFoundException;
-import ru.tinkoff.contactapplicationapi.models.Response;
-import ru.tinkoff.contactapplicationapi.models.SuccessResponse;
+import ru.tinkoff.contactapplicationapi.exception.ApplicationsNotFoundException;
+import ru.tinkoff.contactapplicationapi.model.Response;
+import ru.tinkoff.contactapplicationapi.model.SuccessResponse;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 
 import java.util.*;
 
+@SuppressWarnings("unused")
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class ContactApplicationServiceTest {
@@ -51,7 +52,7 @@ public class ContactApplicationServiceTest {
         app2.setDtCreated(new Date(1530469116000L));
         app2.setContact(contact1);
 
-        List<Applications> applications = Arrays.asList(app1,app2);
+        List<Applications> applications = Arrays.asList(app1, app2);
 
         Mockito.when(applicationsDao.findByContact_Id(1)).thenReturn(Optional.of(applications));
 
@@ -62,7 +63,7 @@ public class ContactApplicationServiceTest {
 
         Mockito.when(applicationsDao.findByContact_Id(3)).thenReturn(Optional.empty());
 
-        service = new ContactApplicationService(applicationsDao,contactDao);
+        service = new ContactApplicationService(applicationsDao, contactDao);
     }
 
     @Test
@@ -74,7 +75,7 @@ public class ContactApplicationServiceTest {
 
         SuccessResponse successResponse = (SuccessResponse) response;
 
-        Assert.assertEquals(successResponse.getResult().getContactId(),1);
+        Assert.assertEquals(successResponse.getResult().getContactId(), 1);
         Assert.assertEquals(successResponse.getResult().getApplication().getProductName(), "Дебетовая карта");
     }
 

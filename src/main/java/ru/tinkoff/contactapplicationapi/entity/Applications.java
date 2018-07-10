@@ -12,7 +12,7 @@ public class Applications {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "CONTACT_ID", nullable = true)
+    @JoinColumn(name = "CONTACT_ID")
     private Contact contact;
 
     @Column(name = "PRODUCT_NAME")
@@ -24,18 +24,8 @@ public class Applications {
     public Applications() {
     }
 
-    public Applications(Contact contact, String productName, Date dtCreated) {
-        this.contact = contact;
-        this.productName = productName;
-        this.dtCreated = dtCreated;
-    }
-
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Contact getContact() {

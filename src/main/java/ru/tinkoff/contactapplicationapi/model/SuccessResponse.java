@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.models;
+package ru.tinkoff.contactapplicationapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

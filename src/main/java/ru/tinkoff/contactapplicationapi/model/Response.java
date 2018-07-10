@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.models;
+package ru.tinkoff.contactapplicationapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -6,7 +6,7 @@ public class Response {
     @JsonProperty("success")
     private boolean success;
 
-    public Response(boolean success) {
+    Response(boolean success) {
         this.success = success;
     }
 
@@ -14,7 +14,4 @@ public class Response {
         return success;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
 }

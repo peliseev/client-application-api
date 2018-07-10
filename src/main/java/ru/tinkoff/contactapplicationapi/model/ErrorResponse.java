@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.models;
+package ru.tinkoff.contactapplicationapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,7 +23,4 @@ public class ErrorResponse extends Response {
         return error;
     }
 
-    public void setError(Error error) {
-        this.error = error;
-    }
 }

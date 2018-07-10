@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.services;
+package ru.tinkoff.contactapplicationapi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,9 +6,9 @@ import ru.tinkoff.contactapplicationapi.dao.ApplicationsDao;
 import ru.tinkoff.contactapplicationapi.dao.ContactDao;
 import ru.tinkoff.contactapplicationapi.entity.Applications;
 import ru.tinkoff.contactapplicationapi.entity.Contact;
-import ru.tinkoff.contactapplicationapi.exceptions.ApplicationsNotFoundException;
-import ru.tinkoff.contactapplicationapi.exceptions.ContactNotFoundException;
-import ru.tinkoff.contactapplicationapi.models.*;
+import ru.tinkoff.contactapplicationapi.exception.ApplicationsNotFoundException;
+import ru.tinkoff.contactapplicationapi.exception.ContactNotFoundException;
+import ru.tinkoff.contactapplicationapi.model.*;
 
 import java.util.Comparator;
 import java.util.List;

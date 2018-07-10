@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ApplicationsDao extends CrudRepository<Applications, Long> {
-    Optional<List<Applications>> findByContact_Id (long contactId);
+    Optional<List<Applications>> findByContact_Id(long contactId);
 }

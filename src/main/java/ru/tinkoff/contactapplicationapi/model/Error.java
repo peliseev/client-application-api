@@ -1,4 +1,4 @@
-package ru.tinkoff.contactapplicationapi.models;
+package ru.tinkoff.contactapplicationapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,9 +8,6 @@ public class Error {
 
     @JsonProperty("description")
     private String description;
-
-    public Error() {
-    }
 
     public Error(int code, String description) {
         this.code = code;
